@@ -75,7 +75,7 @@ async def run_attack(chat_id, ip, port, duration, context, user_id):
     finally:
         # Mark the user's attack as completed
         user_attack_status[user_id] = False
-        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for VIP service!*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for Using Our VIP service!*", parse_mode='Markdown')
 
 async def attack(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id

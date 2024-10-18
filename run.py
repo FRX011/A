@@ -36,7 +36,7 @@ async def manage(update: Update, context: CallbackContext):
     args = context.args
 
     if chat_id != ADMIN_USER_ID:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need admin approval to use this command.*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️You need admin approval to use this command.⚠️*", parse_mode='Markdown')
         return
 
     if len(args) != 2:
@@ -75,7 +75,7 @@ async def run_attack(chat_id, ip, port, duration, context, user_id):
     finally:
         # Mark the user's attack as completed
         user_attack_status[user_id] = False
-        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for Using Our VIP service!*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*✅ Attack Completed! ✅*\n*Thank you for VIP service!*", parse_mode='Markdown')
 
 async def attack(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
@@ -92,7 +92,7 @@ async def attack(update: Update, context: CallbackContext):
         return
 
     if len(args) != 3:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ Usage: /attack <ip> <port> <duration>*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️Usage: /attack <ip> <port> <duration>⚠️*", parse_mode='Markdown')
         return
 
     ip, port, duration = args
@@ -100,7 +100,7 @@ async def attack(update: Update, context: CallbackContext):
         f"*⚔️ Attack Launched! ⚔️*\n"
         f"*🎯 Target: {ip}:{port}*\n"
         f"*🕒 Duration: {duration} seconds*\n"
-        f"*🔥 Vip User Of - @Manager_149  💥*"
+        f"*🔥 Vip User Of - @Manager_149 💥*"
     ), parse_mode='Markdown')
 
     # Mark this user as having an ongoing attack

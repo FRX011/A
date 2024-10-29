@@ -58,7 +58,7 @@ async def manage(update: Update, context: CallbackContext):
 async def run_attack(chat_id, ip, port, duration, context, user_id):
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./Om {ip} {port} {duration}",
+            f"./sharp {ip} {port} {duration}",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
